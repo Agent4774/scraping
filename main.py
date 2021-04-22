@@ -8,8 +8,8 @@ def get_articles():
     html_parser = BeautifulSoup(res.text, 'html.parser')
     main_element = html_parser.select('#hnmain tr')[3:]# getting table wrapper
     items_table = main_element[0].select('tr td table')# getting all table elements
-    articles = items_table[0].select('tr .title .storylink')# getting articles' tags from the table
-    points = items_table[0].select('tr .subtext .score')# getting points' tags from the table
+    articles = items_table[0].select('tr .title .storylink')
+    points = items_table[0].select('tr .subtext .score')
     article_hrefs = []
     
     for index, value in enumerate(articles[:len(articles)-1]):
